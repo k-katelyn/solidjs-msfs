@@ -1,6 +1,6 @@
 {
     "name": "solidjs-msfs",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "SolidJS Hooks for MSFS",
     "author": "Katelyn",
     "main": "dist/index.js",
