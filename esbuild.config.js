@@ -30,16 +30,16 @@ async function buildProject() {
     outfile: outEsm,
   });
 
-  try {
-    await $`bun x tsc --declaration --emitDeclarationOnly --outDir ${outTypes.replace(
-      "/index.d.ts",
-      ""
-    )} src/index.ts`;
-    console.log("Type definitions generated successfully");
-  } catch (error) {
-    console.error("Error generating type definitions:", error);
-    process.exit(1);
-  }
+  // try {
+  //   await $`bun x tsc --declaration --emitDeclarationOnly --outDir ${outTypes.replace(
+  //     "/index.d.ts",
+  //     ""
+  //   )} src/index.ts`;
+  //   console.log("Type definitions generated successfully");
+  // } catch (error) {
+  //   console.error("Error generating type definitions:", error);
+  //   process.exit(1);
+  // }
 }
 
 buildProject().catch((err) => {
