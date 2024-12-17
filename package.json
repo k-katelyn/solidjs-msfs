@@ -1,0 +1,30 @@
+{
+    "name": "solidjs-msfs",
+    "version": "0.1.0",
+    "description": "SolidJS Hooks for MSFS",
+    "author": "Katelyn",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "files": [
+        "dist"
+    ],
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/k-katelyn/solidjs-msfs.git"
+    },
+    "scripts": {
+        "build": "bun run esbuild.config.js",
+        "dev": "bun --watch run esbuild.config.js"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "esbuild": "^0.24.0",
+        "esbuild-plugin-solid": "^0.6.0",
+        "typescript": "^5.7.2"
+    },
+    "peerDependencies": {
+        "solid-js": "^1.9.x"
+    },
+    "dependencies": {}
+}
