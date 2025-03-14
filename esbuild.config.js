@@ -6,6 +6,7 @@ import packageJson from "./package.json" assert { type: "json" };
 const outCjs = packageJson.main;
 const outEsm = packageJson.module;
 const outTypes = packageJson.types || "dist/index.d.ts";
+const outDir = outTypes.replace("/index.d.ts", "");
 
 async function buildProject() {
   const commonOptions = {
@@ -30,16 +31,15 @@ async function buildProject() {
     outfile: outEsm,
   });
 
-  // try {
-  //   await $`bun x tsc --declaration --emitDeclarationOnly --outDir ${outTypes.replace(
-  //     "/index.d.ts",
-  //     ""
-  //   )} src/index.ts`;
-  //   console.log("Type definitions generated successfully");
-  // } catch (error) {
-  //   console.error("Error generating type definitions:", error);
-  //   process.exit(1);
-  // }
+  try {
+
+    await $`bun x tsc --project tsconfig.build.json`;
+
+    console.log("Type definitions created");
+  } catch (error) {
+    console.error(error);
+    process.exit(1); 
+  }
 }
 
 buildProject().catch((err) => {
